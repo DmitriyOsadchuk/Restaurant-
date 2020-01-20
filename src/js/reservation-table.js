@@ -1,4 +1,4 @@
-let tables = {
+var tables = {
     1:{
         "available": true,
         "name": '',
@@ -217,43 +217,83 @@ let tables = {
     }
 };
 
-re = function reserve(id_table) {
+randomI = function randomInteger(min, max) {
+    var rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+};
+
+randomNumbersFromArray = function randNFA(max, min, length) {
+    var result = [];
+    for(var j = 0; j < length; j++){
+        random = randomI(min, max);
+        var idx = result.indexOf(random);
+        while (idx != -1) {
+            random = randomI(min, max);
+            idx = result.indexOf(random);
+        }
+        result.push(random);
+    }
+    return result;
+};
+
+reserveTable = function reserve(id_table) {
     document.getElementById("tableNumder").value = id_table;
 };
 clearForm = function clear() {
-    document.getElementById("tableNumder").value = 0
-    document.getElementById("inputName").value = ""
-    document.getElementById("inputNumber").value = 1
-    document.getElementById("inputDate").value = ""
-    document.getElementById("inputPhone").value = ""
-    document.getElementById("inputTextarea").value = ""
-    document.getElementById("inputTime").value = ""
+    document.getElementById("tableNumder").value = 0;
+    document.getElementById("inputName").value = "";
+    document.getElementById("inputNumber").value = 1;
+    document.getElementById("inputDate").value = "";
+    document.getElementById("inputPhone").value = "";
+    document.getElementById("inputTextarea").value = "";
+    document.getElementById("inputTime").value = "";
 };
 addBlock = function addCode(idTable) {
     document.getElementById(idTable).innerHTML += "<div class='block'></div>";
 };
+
 setForm = function set() {
-    idTable = document.getElementById("tableNumder").value
+    idTable = document.getElementById("tableNumder").value;
     for (key in tables) {
         if (tables.hasOwnProperty(key)) {
             if (idTable == key) {
-                tables[key].name = document.getElementById("inputName").value
-                tables[key].party_of = document.getElementById("inputNumber").value
-                tables[key].data = document.getElementById("inputDate").value
-                tables[key].phone = document.getElementById("inputPhone").value
-                tables[key].massage = document.getElementById("inputTextarea").value
-                tables[key].time = document.getElementById("inputTime").value
+                tables[key].name = document.getElementById("inputName").value;
+                tables[key].party_of = document.getElementById("inputNumber").value;
+                tables[key].data = document.getElementById("inputDate").value;
+                tables[key].phone = document.getElementById("inputPhone").value;
+                tables[key].massage = document.getElementById("inputTextarea").value;
+                tables[key].time = document.getElementById("inputTime").value;
                 tables[key].available = false
             }
         }
     }
-    table = document.getElementById(idTable)
+    table = document.getElementById(idTable);
     table.classList.remove("available");
     table.classList.add("unavailable");
-    alert('Hi, ' + tables[idTable].name + ' !' + '\r\nYou have booked a table number ' + idTable + '\r\nOn ' + tables[idTable].data + ', about ' + tables[idTable].time + ', for ' + tables[idTable].party_of + ' people. \r\nWe are waiting for you!')
-    clearForm()
-    addBlock(idTable)
+    alert('Hi, ' + tables[idTable].name + ' !' + '\r\nYou have booked a table number ' + idTable + '\r\nOn ' + tables[idTable].data + ', at ' + tables[idTable].time +
+        ', for ' + tables[idTable].party_of + ' people.' + '\r\nYour phone numder ' + tables[idTable].phone +  '\r\nWe are waiting for you!');
+    clearForm();
+    addBlock(idTable);
+
 };
 
 
+var randtable = randomNumbersFromArray(24, 1, 7);
+setDefaultReserve = function setDef(id) {
+    for (key in tables) {
+        if (tables.hasOwnProperty(key)) {
+            if (id == key) {
+                tables[key].available = false
+            }
+        }
+    }
+    table = document.getElementById(id);
+    table.classList.remove("available");
+    table.classList.add("unavailable");
+    addBlock(id)
+};
 
+bookTable = function book () {
+    randtable.forEach(element => setDefaultReserve(element))
+};
+bookTable();

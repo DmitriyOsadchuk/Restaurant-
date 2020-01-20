@@ -1,16 +1,16 @@
 /* About page */
-let title1 = document.querySelector('#title-1');
-let title2 = document.querySelector('#title-2');
-let historyDescription = document.querySelector('#history-description');
-let jobDescription = document.querySelector('#job-description');
-let newsletterForm = document.querySelector('#newsletter-form');
+var title1 = document.querySelector('#title-1');
+var title2 = document.querySelector('#title-2');
+var historyDescription = document.querySelector('#history-description');
+var jobDescription = document.querySelector('#job-description');
+var newsletterForm = document.querySelector('#newsletter-form');
 title1.style.opacity = "0";
 title2.style.opacity = "0";
 historyDescription.style.opacity = "0";
 jobDescription.style.opacity = "0";
 newsletterForm.style.opacity = "0";
 
-let options = {
+var options = {
   rootMargin: '0px',
   threshold: 0.2
 };
@@ -63,7 +63,7 @@ function callback(entries, observer) {
 }    
         
 // Create an intersection observer
-let observer = new IntersectionObserver(callback, options);
+var observer = new IntersectionObserver(callback, options);
 
 // Start observing 
 observer.observe(title1);

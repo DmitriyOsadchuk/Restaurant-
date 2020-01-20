@@ -12,10 +12,10 @@
 
 
   // Back to top hide/show
-  let $backToTop = $('#back-to-top');
+  var $backToTop = $('#back-to-top');
 
-  let offset = 2000;
-  let duration = 400;
+  var offset = 2000;
+  var duration = 400;
 
   $(window).scroll(function() {
     if($(this).scrollTop() > offset) {

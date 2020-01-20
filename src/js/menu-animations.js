@@ -1,14 +1,14 @@
 // Food, Desserts and Drinks pages
 
  // ----- Observer #1 logic ------
-let newsletterForm = document.querySelector('#newsletter-form');
-let title1 = document.querySelector('#title-1');
-let menuIcons = document.querySelector('#menu-icons');
+var newsletterForm = document.querySelector('#newsletter-form');
+var title1 = document.querySelector('#title-1');
+var menuIcons = document.querySelector('#menu-icons');
 newsletterForm.style.opacity = "0";
 title1.style.opacity = "0";
 menuIcons.style.opacity = "0";
 
-let options1 = {
+var options1 = {
   rootMargin: '0px',
   threshold: 0.2
 };
@@ -45,7 +45,7 @@ function callback1(entries, observer1) {
 }
 
 // Create an intersection observer
-let observer1 = new IntersectionObserver(callback1, options1);
+var observer1 = new IntersectionObserver(callback1, options1);
 
 // Start observing
 observer1.observe(newsletterForm);
@@ -53,13 +53,13 @@ observer1.observe(title1);
 observer1.observe(menuIcons);
 
  // ------ Observer #2 logic -------
-let menuItems = document.querySelectorAll('.menu-item');
+var menuItems = document.querySelectorAll('.menu-item');
 
 Array.from(menuItems).forEach(foodItem => {
   foodItem.style.opacity = "0";
 });
 
-let options2 = {
+var options2 = {
   rootMargin: '0px',
   threshold: 0.2
 };
@@ -76,7 +76,7 @@ function callback2(entries, observer2) {
 }
 
 // Create an intersection observer
-let observer2 = new IntersectionObserver(callback2, options2);
+var observer2 = new IntersectionObserver(callback2, options2);
 
 // Start observing
 Array.from(menuItems).forEach(foodItem => {

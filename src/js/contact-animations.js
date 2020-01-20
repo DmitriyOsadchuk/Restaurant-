@@ -1,14 +1,14 @@
 /* Contact page */
-let title1Directions = document.querySelector('#title-1-directions');
-let title2Directions = document.querySelector('#title-2-directions');
-let description = document.querySelector('#description');
-let newsletterForm = document.querySelector('#newsletter-form');
+var title1Directions = document.querySelector('#title-1-directions');
+var title2Directions = document.querySelector('#title-2-directions');
+var description = document.querySelector('#description');
+var newsletterForm = document.querySelector('#newsletter-form');
 title1Directions.style.opacity = "0";
 title2Directions.style.opacity = "0";
 description.style.opacity = "0";
 newsletterForm.style.opacity = "0";
 
-let options = {
+var options = {
   rootMargin: '0px',
   threshold: 0.2
 };
@@ -53,7 +53,7 @@ function callback(entries, observer) {
 }
 
 // Create an intersection observer
-let observer = new IntersectionObserver(callback, options);
+var observer = new IntersectionObserver(callback, options);
 
 // Start observing 
 observer.observe(title1Directions);

@@ -1,13 +1,13 @@
 /* Map */
 function initMap() {
     // Map options
-    let options = {
+    var options = {
         zoom: 15,
         center: {lat: 49.232799, lng: 28.471635}
     };
 
     // New map
-    let map = new google.maps.Map(document.getElementById('map'), options);
+    var map = new google.maps.Map(document.getElementById('map'), options);
 
     // Add marker
     addMarker({
@@ -18,14 +18,14 @@ function initMap() {
 
     // Add Marker Function
     function addMarker(props) {
-        let marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
             position: props.coords,
             map:map,
             icon: props.iconImage,
         });
         // Check content
         if(props.content){
-            let infoWindow = new google.maps.InfoWindow({
+            var infoWindow = new google.maps.InfoWindow({
                 content:props.content
             });
             marker.addListener('click', function(){

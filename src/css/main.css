@@ -52,8 +52,10 @@ a, a:hover {
   width: 40px;
   height: 40px;
   background-color: #007bff;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   text-align: center;
   line-height: 40px;
 }
@@ -61,6 +63,7 @@ a, a:hover {
 .back-to-top:hover {
   background-color: #0069d9;
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .back-to-top i {
@@ -102,7 +105,7 @@ a, a:hover {
   box-shadow: 0 0 30px rgba(0,0,0,.15) inset, 0 6px 10px rgba(0,0,0,.15);
 }
 
-.banner::before, .banner::after {
+.banner:before, .banner:after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -115,14 +118,16 @@ a, a:hover {
   border-right: 20px solid #001933;
   border-bottom-color: #003166;
   border-left-color: transparent;
+  -webkit-transform: rotate(-5deg);
   transform: rotate(-5deg);
 }
 
-.banner::after {
+.banner:after {
   left: auto;
   right: -37px;
   border-left: 20px solid #001933;
   border-right: 30px solid transparent;
+  -webkit-transform: rotate(5deg);
   transform: rotate(5deg);
 }
 
@@ -159,15 +164,17 @@ a, a:hover {
  * COVER
  */
 
- .cover .carousel-item > img {
+.cover .carousel-item > img {
   min-width: 100%;
   height: calc(100vh - 62px);
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
 .cover .carousel-caption {
   bottom: initial;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   color: #fff;
 }
@@ -176,12 +183,13 @@ a, a:hover {
   border-radius: 0;
 }
 
-.dark-overlay::after {
+.dark-overlay:after {
   content: ' ';
   width: 100%;
   height: 100%;
   background: #000;
   opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   position: absolute;
   left: 0;
   top: 0;
@@ -227,6 +235,7 @@ a, a:hover {
   top: 0;
   left: 0;
   min-width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
 }
@@ -344,15 +353,18 @@ a, a:hover {
   width: 40px;
   height: 40px;
   line-height: 43px;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .nav-social:hover {
+  -webkit-transform: scale(1.1) rotate(360deg);
   transform: scale(1.1) rotate(360deg);
 }
 
 .nav-social i {
   font-size: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   color: rgba(0, 0, 0, 0.5);
 }
@@ -377,6 +389,7 @@ a, a:hover {
   width: 40px;
   height: 40px;
   background-color: #007bff;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   text-align: center;
   line-height: 47px;
@@ -385,6 +398,7 @@ a, a:hover {
 
 .footer-social:hover {
   background-color: #0069d9;
+  -webkit-transform: scale(1.1) rotate(360deg);
   transform: scale(1.1) rotate(360deg);
 }
 
@@ -401,7 +415,7 @@ a, a:hover {
  * CONTACT SOCIAL
  */
 
- .contact-social {
+.contact-social {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -411,10 +425,12 @@ a, a:hover {
 .contact-social i {
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .contact-social i:hover {
+  -webkit-transform: scale(1.1) rotate(360deg);
   transform: scale(1.1) rotate(360deg);
 }
 
@@ -422,7 +438,7 @@ a, a:hover {
  * ABOUT
  */
 
- .about-jumbotron {
+.about-jumbotron {
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -437,6 +453,7 @@ a, a:hover {
   top: 50%;
   left: 50%;
   margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -456,6 +473,7 @@ a, a:hover {
 .about-arrow .fa-angle-down {
   line-height: 50px;
   font-size: 64px !important;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -547,6 +565,18 @@ a, a:hover {
   padding-bottom: 128px;
 }
 
+.reservations-form ::-webkit-input-placeholder {
+  color: #d9d9d9 !important;
+}
+
+.reservations-form ::-moz-placeholder {
+  color: #d9d9d9 !important;
+}
+
+.reservations-form :-ms-input-placeholder {
+  color: #d9d9d9 !important;
+}
+
 .reservations-form ::placeholder {
   color: #d9d9d9 !important;
 }
@@ -605,6 +635,18 @@ a, a:hover {
   padding-bottom: 128px;
 }
 
+.contact-form ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.contact-form ::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.contact-form :-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
 .contact-form ::placeholder {
   color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -654,6 +696,7 @@ a, a:hover {
   top: 50%;
   left: 50%;
   margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -744,6 +787,7 @@ a, a:hover {
   top: 50%;
   left: 50%;
   margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -824,6 +868,7 @@ a, a:hover {
   top: 50%;
   left: 50%;
   margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -951,6 +996,7 @@ a, a:hover {
   top: 50%;
   left: 50%;
   margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -975,8 +1021,12 @@ a, a:hover {
   display: inline-block;
   margin-right: 10px;
   cursor: pointer;
-
 }
+
+.paginator > span:hover {
+  text-decoration: underline;
+}
+
 .paginator_active {
   color: red;
   border: 1px solid;
@@ -986,12 +1036,16 @@ a, a:hover {
 
 /* CSS ANIMATIONS */
 .navbar-brand .animated {
+  -webkit-animation-duration: 2s;
   animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
 .about-arrow.animated {
+  -webkit-animation-duration: 2s;
   animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
@@ -1036,7 +1090,7 @@ a, a:hover {
     text-align: left;
   }
 
-  .page-footer-title::before {
+  .page-footer-title:before {
     content: '';
     width: 30px;
     border-top: #007bff;
@@ -1046,7 +1100,7 @@ a, a:hover {
     margin-bottom: 10px;
   }
 
-  .footer-title-h5::before {
+  .footer-title-h5:before {
     content: '';
     display: block;
     width: 30px;
@@ -1105,5 +1159,4 @@ a, a:hover {
   .menu-icon {
     max-width: 30px;
   }
-
 }

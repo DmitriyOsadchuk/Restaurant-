@@ -1,14 +1,14 @@
 /* Gallery page */
 
 /* ------- Observer #1 logic ------- */
-let title1 = document.querySelector('#title-1');
-let title2 = document.querySelector('#title-2');
-let newsletterForm = document.querySelector('#newsletter-form');
+var title1 = document.querySelector('#title-1');
+var title2 = document.querySelector('#title-2');
+var newsletterForm = document.querySelector('#newsletter-form');
 title1.style.opacity = "0";
 title2.style.opacity = "0";
 newsletterForm.style.opacity = "0";
 
-let options1 = {
+var options1 = {
   rootMargin: '0px',
   threshold: 0.2
 };
@@ -45,7 +45,7 @@ function callback1(entries, observer1) {
 }
 
 // Create an intersection observer
-let observer1 = new IntersectionObserver(callback1, options1);
+var observer1 = new IntersectionObserver(callback1, options1);
 
 // Start observing 
 observer1.observe(title1);
@@ -54,7 +54,7 @@ observer1.observe(newsletterForm);
 
 /* ------Observer #2 logic-------*/
 
-let galleryItems = document.querySelectorAll('.gallery-item');
+var galleryItems = document.querySelectorAll('.gallery-item');
 
 
 
@@ -62,7 +62,7 @@ Array.from(galleryItems).forEach(galleryItem => {
   galleryItem.style.opacity = "0";
 });
 
-let options2 = {
+var options2 = {
   rootMargin: '0px',
   threshold: 0.2
 };
@@ -79,7 +79,7 @@ function callback2(entries, observer2) {
 }
 
 // Create an intersection observer
-let observer2 = new IntersectionObserver(callback2, options2);
+var observer2 = new IntersectionObserver(callback2, options2);
 
 // Start observing
 Array.from(galleryItems).forEach(galleryItem => {

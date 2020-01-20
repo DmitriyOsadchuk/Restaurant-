@@ -1,12 +1,12 @@
 /* Album page */
-let title1 = document.querySelector('#title-1');
-let title2 = document.querySelector('#title-2');
-let cardFood = document.querySelector('#card-food');
-let cardDesserts = document.querySelector('#card-desserts');
-let cardDrinks = document.querySelector('#card-drinks');
-let cardLocation = document.querySelector('#card-location');
-let cardStaff = document.querySelector('#card-staff');
-let newsletterForm = document.querySelector('#newsletter-form');
+var title1 = document.querySelector('#title-1');
+var title2 = document.querySelector('#title-2');
+var cardFood = document.querySelector('#card-food');
+var cardDesserts = document.querySelector('#card-desserts');
+var cardDrinks = document.querySelector('#card-drinks');
+var cardLocation = document.querySelector('#card-location');
+var cardStaff = document.querySelector('#card-staff');
+var newsletterForm = document.querySelector('#newsletter-form');
 title1.style.opacity = "0";
 title2.style.opacity = "0";
 cardFood.style.opacity = "0";
@@ -16,7 +16,7 @@ cardLocation.style.opacity = "0";
 cardStaff.style.opacity = "0";
 newsletterForm.style.opacity = "0";
 
-let options = {
+var options = {
   rootMargin: '0px',
   threshold: 0.2
 };
@@ -93,7 +93,7 @@ function callback(entries, observer) {
 }
 
 // Create an intersection observer
-let observer = new IntersectionObserver(callback, options);
+var observer = new IntersectionObserver(callback, options);
 
 // Start observing 
 observer.observe(title1);

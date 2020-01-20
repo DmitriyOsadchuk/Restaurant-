@@ -1,12 +1,12 @@
 $('#galleryCarousel').carousel({
     interval: false
 });
-let lightbox = false;
+var lightbox = false;
 $( "#gallery-thumbnails" ).on( "click", "a", function( event ) {
     event.preventDefault();
     if (lightbox === false) {
         lightbox = true;
-        let slideNumber = $(this).attr("data-slide-number");
+        var slideNumber = $(this).attr("data-slide-number");
         $('#galleryCarousel').carousel(Number(slideNumber));
         $("#lightbox").show();
     }
