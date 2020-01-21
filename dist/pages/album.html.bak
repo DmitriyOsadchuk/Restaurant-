@@ -81,8 +81,8 @@
                 <div class="card-body">
                   <h5 class="card-title font-weight-bold">FOOD</h5>
                   <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Aliquam fermentum a sapien non pulvinar. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aliquam fermentum a sapien non pulvinar.
                   </p>
                   <a href="gallery-food.html" class="btn btn-outline-dark" role="button">View</a>
                 </div>
@@ -95,8 +95,8 @@
                 <div class="card-body">
                   <h5 class="card-title font-weight-bold">DESSERTS</h5>
                   <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Aliquam fermentum a sapien non pulvinar. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aliquam fermentum a sapien non pulvinar.
                   </p>
                   <a href="gallery-desserts.html" class="btn btn-outline-dark" role="button">View</a>
                 </div>
@@ -109,8 +109,8 @@
                 <div class="card-body">
                   <h5 class="card-title font-weight-bold">DRINKS</h5>
                   <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Aliquam fermentum a sapien non pulvinar. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aliquam fermentum a sapien non pulvinar.
                   </p>
                   <a href="gallery-drinks.html" class="btn btn-outline-dark" role="button">View</a>
                 </div>
@@ -125,8 +125,8 @@
                 <div class="card-body">
                   <h5 class="card-title font-weight-bold">LOCATION</h5>
                   <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Aliquam fermentum a sapien non pulvinar. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aliquam fermentum a sapien non pulvinar.
                   </p>
                   <a href="gallery-location.html" class="btn btn-outline-dark" role="button">View</a>
                 </div>
@@ -139,8 +139,8 @@
                 <div class="card-body">
                   <h5 class="card-title font-weight-bold">STAFF</h5>
                   <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Aliquam fermentum a sapien non pulvinar. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aliquam fermentum a sapien non pulvinar.
                   </p>
                   <a href="gallery-staff.html" class="btn btn-outline-dark" role="button">View</a>
                 </div>
@@ -207,9 +207,9 @@
       crossorigin="anonymous">
     </script>
     <!-- Bootstrap -->
-    <script 
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous">
     </script>
     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>

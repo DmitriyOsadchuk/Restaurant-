@@ -1,0 +1,1 @@
+$("#galleryCarousel").carousel({interval:!1});var lightbox=!1;$("#gallery-thumbnails").on("click","a",function(l){if(l.preventDefault(),!1===lightbox){lightbox=!0;var i=$(this).attr("data-slide-number");$("#galleryCarousel").carousel(Number(i)),$("#lightbox").show()}}),$("#close").click(function(){!0===lightbox&&(lightbox=!1,$("#lightbox").hide())});
