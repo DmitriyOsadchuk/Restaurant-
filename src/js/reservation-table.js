@@ -217,24 +217,7 @@ var tables = {
     }
 };
 
-randomI = function randomInteger(min, max) {
-    var rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-};
-
-randomNumbersFromArray = function randNFA(max, min, length) {
-    var result = [];
-    for(var j = 0; j < length; j++){
-        random = randomI(min, max);
-        var idx = result.indexOf(random);
-        while (idx != -1) {
-            random = randomI(min, max);
-            idx = result.indexOf(random);
-        }
-        result.push(random);
-    }
-    return result;
-};
+// Reservation table
 
 reserveTable = function reserve(id_table) {
     document.getElementById("tableNumder").value = id_table;
@@ -247,39 +230,57 @@ clearForm = function clear() {
     document.getElementById("inputPhone").value = "";
     document.getElementById("inputTextarea").value = "";
     document.getElementById("inputTime").value = "";
+
+    var button = document.getElementsByClassName('btn-light');
+    button[0].setAttribute('disabled', '');
 };
 addBlock = function addCode(idTable) {
     document.getElementById(idTable).innerHTML += "<div class='block'></div>";
+    select = document.getElementById('tableNumder');
+    value = select.options[idTable];
+    value.setAttribute('disabled', '');
 };
 
-setForm = function set() {
-    idTable = document.getElementById("tableNumder").value;
-    for (key in tables) {
-        if (tables.hasOwnProperty(key)) {
-            if (idTable == key) {
-                tables[key].name = document.getElementById("inputName").value;
-                tables[key].party_of = document.getElementById("inputNumber").value;
-                tables[key].data = document.getElementById("inputDate").value;
-                tables[key].phone = document.getElementById("inputPhone").value;
-                tables[key].massage = document.getElementById("inputTextarea").value;
-                tables[key].time = document.getElementById("inputTime").value;
-                tables[key].available = false
-            }
-        }
+
+// Validation number phone
+function isValidNumber() {
+    var regex = /^\+?3?8?(0\d{9})$/;
+    var phone = document.getElementById("inputPhone").value;
+
+    if (regex.test(phone)) {
+        var button = document.getElementsByClassName('btn-light')
+        button[0].removeAttribute('disabled');
+        return true;
+    } else {
+        alert("Invalid phone number. Please check your phone number");
+        var button = document.getElementsByClassName('btn-light')
+        button[0].setAttribute('disabled', '');
+        return false;
     }
-    table = document.getElementById(idTable);
-    table.classList.remove("available");
-    table.classList.add("unavailable");
-    alert('Hi, ' + tables[idTable].name + ' !' + '\r\nYou have booked a table number ' + idTable + '\r\nOn ' + tables[idTable].data + ', at ' + tables[idTable].time +
-        ', for ' + tables[idTable].party_of + ' people.' + '\r\nYour phone numder ' + tables[idTable].phone +  '\r\nWe are waiting for you!');
-    clearForm();
-    addBlock(idTable);
+}
 
+// Random reserve table
+randomI = function randomInteger(min, max) {
+    var rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
 };
 
+randomNumbersFromArray = function randNFA(max, min, length) {
+    var result = [];
+    for(var j = 0; j < length; j++){
+        random = randomI(min, max)
+        var idx = result.indexOf(random);
+        while (idx != -1) {
+            random = randomI(min, max)
+            idx = result.indexOf(random);
+        }
+        result.push(random);
+    }
+    return result;
+};
 
-var randtable = randomNumbersFromArray(24, 1, 7);
-setDefaultReserve = function setDef(id) {
+var randtable  = randomNumbersFromArray(24, 1, 5);
+setDefaultReserv = function setDef(id) {
     for (key in tables) {
         if (tables.hasOwnProperty(key)) {
             if (id == key) {
@@ -287,13 +288,48 @@ setDefaultReserve = function setDef(id) {
             }
         }
     }
-    table = document.getElementById(id);
+    table = document.getElementById(id)
     table.classList.remove("available");
     table.classList.add("unavailable");
     addBlock(id)
 };
 
+
+// Setting form reservation
+setForm = function set(id) {
+    if (id) {
+        idTable = id
+    } else {
+        idTable = document.getElementById("tableNumder").value
+    }
+    for (key in tables) {
+        if (tables.hasOwnProperty(key)) {
+            if (idTable == key) {
+                tables[key].name = document.getElementById("inputName").value
+                tables[key].party_of = document.getElementById("inputNumber").value
+                tables[key].data = document.getElementById("inputDate").value
+                tables[key].phone = document.getElementById("inputPhone").value
+                tables[key].massage = document.getElementById("inputTextarea").value
+                tables[key].time = document.getElementById("inputTime").value
+                tables[key].available = false
+            }
+        }
+    }
+    table = document.getElementById(idTable);
+    table.classList.remove("available");
+    table.classList.add("unavailable");
+    alert('Hi, ' + tables[idTable].name + ' !' + ' Welcome to Grill Club !' + '\r\nYou have booked a table number ' + idTable + '\r\nOn ' + tables[idTable].data + ', about ' + tables[idTable].time + ', for ' + tables[idTable].party_of + ' people. \r\nWe are waiting for you!')
+    window.scrollTo(0, 0);
+    clearForm();
+    addBlock(idTable)
+};
+
+
+// Booking table
 bookTable = function book () {
-    randtable.forEach(element => setDefaultReserve(element))
+    randtable .forEach(element => setDefaultReserv(element))
 };
 bookTable();
+
+
+
